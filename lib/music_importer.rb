@@ -1,3 +1,4 @@
+require 'pry'
 class MusicImporter
   attr_reader :path
 
@@ -15,6 +16,7 @@ class MusicImporter
 
   def import
     self.files.each do |file|
+      binding.pry
       Song.create_from_filename(file)
     end
   end
